@@ -37,11 +37,12 @@ function update_forecast_buttons_data(){
         let img1 = document.createElement('img');
         let img2 = document.createElement('img');
         
-        img1.width=68;
-        img1.height=56;
+        img1.width=63;
+        img1.height=51;
 
-        img2.width=90;
-        img2.height=61;
+        img2.width=93;
+        img2.height=64;
+
 
         img1.src= "images/icons/" + data_e_media_temperature[i].icona + ".svg";
         img2.src= "images/icons/" + data_e_media_temperature[i].icona + ".svg";
