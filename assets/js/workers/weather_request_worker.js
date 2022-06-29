@@ -17,10 +17,10 @@ self.onmessage= function(e){
 
   if('city' in e.data){
     var params = 'city=' + e.data.city;
-    xhr.open('POST', 'http://localhost:3000/city_name_weather', true);
+    xhr.open('POST', '/city_name_weather', true);
   }else{
     var params = 'lat=' + e.data.lat + "&lon=" + e.data.lon;
-    xhr.open('POST', 'http://localhost:3000/lon_lat_weather', true);
+    xhr.open('POST', '/lon_lat_weather', true);
   }
   
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
