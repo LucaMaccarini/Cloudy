@@ -1,0 +1,27 @@
+body[class*="bootstrap-dark"] h1, body[class*="bootstrap-dark"] h2, body[class*="bootstrap-dark"] h3, [class*="bootstrap-dark"] h4, body[class*="bootstrap-dark"] h5, body[class*="bootstrap-dark"] h6, body[class*="bootstrap-dark"] p, body[class*="bootstrap-dark"] a {
+    color: white !important;
+}
+
+
+body[class*="bootstrap-dark"] #search-bar, body[class*="bootstrap-dark"] #mynav{
+    background-color: black;
+}
+
+body[class*="bootstrap-dark"] #search-bar::placeholder { 
+    color: white;
+    opacity: 1;
+}
+
+body[class*="bootstrap-dark"] #search-bar { 
+    color: white;
+}
+
+body[class*="bootstrap-dark"] #div-tabella_dati{
+    background-color: #1d3557;
+}
+
+body[class*="bootstrap-dark"] .table tbody tr:nth-of-type(odd) {
+    background-color: #233f6f;
+}
+
+

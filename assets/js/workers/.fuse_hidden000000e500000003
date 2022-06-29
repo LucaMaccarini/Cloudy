@@ -1,0 +1,29 @@
+function timeConverter_giorno_mese(UNIX_timestamp){
+    var a = new Date(UNIX_timestamp * 1000);
+    var days = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
+    var months = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
+    var dayNumber = a.getDate();
+    var dayName = days[a.getDay()];
+    var month = months[a.getMonth()];
+    return {nome_giorno: dayName, giorno: dayNumber, mese: month};       
+};
+
+self.addEventListener('message', async function(e){
+    var giorno_media = new Array();
+    var somma = e.data[0].main.temp;;
+    var elementi=1;
+    var data = timeConverter_giorno_mese(e.data[0].dt);
+
+    for(let i=1; i< e.data.length && giorno_media.length<=5; i++){
+        if(data.giorno == timeConverter_giorno_mese(e.data[i].dt).giorno){
+            somma+=e.data[i].main.temp;
+            elementi++;
+        }else{
+            giorno_media.push({data: data, media_temp: Math.round(somma/elementi)});
+            somma = e.data[i].main.temp;
+            elementi=1;
+            data = timeConverter_giorno_mese(e.data[i].dt);
+        }
+    }
+    self.postMessage(giorno_media);
+})

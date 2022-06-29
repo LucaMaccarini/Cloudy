@@ -1,0 +1,344 @@
+.header-background-image{
+    background-image: linear-gradient(rgba(36,36,36,.1), rgba(36,36,36,.1));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    height: 670px;
+}
+
+#mynav{
+    background-color: #f5f8ff;
+}
+
+body.bootstrap{
+    /*correggere quando avrai bootstrap dark in locale*/
+    background-color: #f5f8ff !important;
+}
+
+#search-bar{
+    background-color: #f5f8ff;
+    -webkit-box-shadow: 5px 6px 31px -10px #000000;
+    -moz-box-shadow: 5px 6px 31px -10px #000000;
+    -o-box-shadow: 5px 6px 31px -10px #000000;
+    box-shadow: 5px 6px 31px -10px #000000;
+    color:black;
+}
+
+#search-button{
+    color:white;
+}
+
+#search-bar::placeholder { 
+    color: #1d3557;
+    opacity: 1;
+}
+
+
+#search-button{
+    background-color: #233f6f;
+}
+
+.today, .forecast{
+    background-color: #233f6f;
+}
+
+.forecast-container .forecast:nth-child(even) {
+    background-color: #1d3557;
+}
+
+.forecast-container .forecast:nth-child(even) p{
+    color: #1d3557;
+}
+
+.forecast-container .forecast:nth-child(even):hover p{
+    color: white;
+}
+
+
+.forecast-container{
+    color: white;
+}
+
+.menu-item>a{
+    text-decoration: none;
+}
+
+#logo{
+    padding: 0px;
+}
+
+#logo-name-div{
+    padding-left: 14px;
+    padding-right: 0px;
+}
+
+.branding{
+    text-decoration: none;
+}
+
+#site-title{
+    /* trovare un font secondario più carino */
+    font-family: 'Satisfy', cursive;
+    font-weight: bold;
+    font-size: 36px;
+    
+}
+
+
+h1, h2, h3, h4, h5, h6, p{
+    color: #233f6f;
+}
+
+.forecast:hover p{
+    color:white;
+}
+
+a{
+    color: #233f6f !important;
+}
+
+.nav-bar-div{
+    padding-right: 1px;;
+}
+
+.nav-link{
+    font-size:19px;
+}
+
+
+#logo-div{
+    padding-left: 1px;
+}
+
+.testo-in-linea{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+ul.no-bullets {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+
+#dark-light-mode-div{
+    padding-left: 15px;
+    margin-left: 0px;
+}
+
+#dark-light-mode-checkbox{
+    transform: scale(1.1);
+}
+
+/*
+    switch dark/light mode
+*/
+.l {
+	background-color: rgba(0,0,0,0.7);
+	border-radius: 0.75em;
+	box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.3) inset;
+	color: #fdea7b;
+	display: inline-flex;
+	align-items: center;
+	margin: auto;
+	padding: 0.15em !important;
+	width: 3em;
+	height: 1.5em;
+	transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.l:before, .l:after {
+	content: "";
+	display: block;
+}
+.l:before {
+	background-color: #d7d7d7;
+	border-radius: 50%;
+	width: 1.2em;
+	height: 1.2em;
+	transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+	z-index: 1;
+}
+.l:after {
+	background:
+		linear-gradient(transparent 50%, rgba(0,0,0,0.15) 0) 0 50% / 50% 100%,
+		repeating-linear-gradient(90deg,#bbb 0,#bbb,#bbb 20%,#999 20%,#999 40%) 0 50% / 50% 100%,
+		radial-gradient(circle at 50% 50%,#888 25%, transparent 26%);
+	background-repeat: no-repeat;
+	border: 0.25em solid transparent;
+	border-left: 0.4em solid #d8d8d8;
+	border-right: 0 solid transparent;
+	transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+	transform: translateX(-22.5%);
+	transform-origin: 25% 50%;
+	width: 1.2em;
+	height: 1em;
+}
+
+/* Checked */
+.l:checked {
+	background-color: rgba(0,0,0,0.45);
+	box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.1) inset;
+}
+.l:checked:before {
+	background-color: currentColor;
+	transform: translateX(125%)
+}
+.l:checked:after {
+	border-left-color: currentColor;
+	transform: translateX(-2.5%) rotateY(180deg);
+}
+
+.l:focus {
+	outline: 0;
+}
+
+#tabella_dati{
+    color:white;
+    margin-bottom: 10px;
+    margin-top: 4px;
+}
+
+
+.no-visibility{
+    visibility: hidden;
+}
+
+.no-padding{
+    padding: 0px !important;
+}
+
+main{
+    margin-top: 54px;
+}
+
+#div-tabella_dati{
+    transition-duration: 0ms;
+    transition-property: background-color, color;
+    border-radius: 10px;
+}
+
+
+.add-col-padding{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: #1d3557;
+}
+
+.table tr td, .table tr th{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table td{
+    font-size: 18px;
+}
+
+.table th{
+    font-size: 18px;
+}
+
+.table tbody tr{
+    height: 55px;
+}
+
+
+.forecast:not(.today) > .forecast-header > .date, 
+.forecast:not(.today) > .forecast-content .location,
+.forecast:not(.today) > .forecast-content > .degree > .forecast-icon, 
+.forecast.today > .forecast-content > .forecast-icon,
+.forecast:not(.today) > .forecast-content > .info_temp
+{
+    display: none;
+}
+
+
+.day, .date{
+    font-size: 17px !important;
+}
+
+.location{
+    font-size: 21px !important;
+}
+
+.forecast:not(.today).num{
+    font-size: 33px;
+}
+
+
+
+/*lg*/
+@media screen and (max-width: 992px) {
+    .header-background-image{
+        height: 442px;
+    }
+ 
+    .hero{
+        padding-top: 75px;
+    }
+
+    #forecast-external-container{
+        margin-top: -231px;
+    }
+
+    .num{
+        font-size: 25px;
+    }
+
+    .forecast:not(.today){
+        padding-bottom: 20px;
+    }
+
+   
+    .forecast:not(.today) .forecast-content{
+        padding-top:4px !important;
+        padding-left:5px;
+        padding-right:5px;
+    }
+
+    .forecast.today .forecast-content{
+        padding-top:13px !important;
+    }
+
+    .forecast:not(.today) .forecast-icon{
+        margin-bottom: 3px !important;
+        height: auto;
+    }
+
+    .forecast:not(.today) .num{
+        font-size: 20px;
+    }
+
+    .forecast.today .num{
+        font-size: 70px !important;
+    }
+
+    .forecast:not(.today) .day{
+        font-size: 14px !important;
+    }
+
+    .forecast:not(.today) img{
+        width: 35px;
+    }
+
+
+}
+
