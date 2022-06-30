@@ -29,7 +29,7 @@ self.onmessage= function(e){
       if(xhr.status == 200) {
           self.postMessage(this.response);
       }else{
-        self.postMessage(JSON.stringify({ajax_error:this.response}));
+        self.postMessage({ajax_error:this.response});
       }
   }
   xhr.send(params);

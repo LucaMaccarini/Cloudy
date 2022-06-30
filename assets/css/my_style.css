@@ -218,8 +218,7 @@ main{
 }
 
 #div-tabella_dati{
-    transition-duration: 0ms;
-    transition-property: background-color, color;
+    background-color: #233f6f;
     border-radius: 10px;
 }
 
@@ -282,6 +281,15 @@ main{
 .forecast:not(.today).num{
     font-size: 33px;
 }
+
+.show_after_load{
+    visibility: hidden;
+}
+
+main{
+    height: 670px;
+}
+
 
 
 

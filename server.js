@@ -39,7 +39,7 @@ app.get('/index', function (req, res) {
 
 app.post('/city_name_weather', urlencodedParser, function(req, res) {
     let city = req.body.city;
-    axios.get('http://api.openweathermap.org/geo/1.0/direct?q='+ city +'&limit=5&appid=' + apikey)
+    axios.get('http://api.openweathermap.org/geo/1.0/direct?q='+ city +'&limit=1&appid=' + apikey)
     .then(axios_res => {
         let lat = axios_res.data[0].lat;
         let lon = axios_res.data[0].lon;
@@ -48,13 +48,16 @@ app.post('/city_name_weather', urlencodedParser, function(req, res) {
             res.json(axios_res.data);
         })
         .catch(error => {
-            res.status(500).send(JSON.stringify({errore_api_weather: error.data}));
+            //la richiesta api (con le coordinate) ha dato esito negativo
+            res.status(500).send({errore: "meteo lon, lat", message: error.data});
         });
+        
     })
     .catch(error => {
-        res.status(500).send(JSON.stringify({errore_api_geolocation: "not_found"}));
+        //la richiesta api (ricerca città) ha dato esito negativo
+        res.status(500).send({errore: "ricerca città", message: error.data});
+        
     });
-    
     
     
 });

@@ -34,25 +34,12 @@ function update_forecast_buttons_data(){
         forecast_buttons[i].getElementsByClassName("location")[0].textContent=parsed_data.citta;
         forecast_buttons[i].getElementsByClassName("num")[0].innerHTML=data_e_media_temperature[i].media_temp + "°C";
 
-        let img1 = document.createElement('img');
-        let img2 = document.createElement('img');
-        
-        img1.width=63;
-        img1.height=51;
-
-        img2.width=93;
-        img2.height=64;
-
-
-        img1.src= "images/icons/" + data_e_media_temperature[i].icona + ".svg";
-        img2.src= "images/icons/" + data_e_media_temperature[i].icona + ".svg";
-        
-        //farle caricare dal worker
-        forecast_buttons[i].getElementsByClassName("forecast-icon")[0].appendChild(img1);
-        forecast_buttons[i].getElementsByClassName("forecast-icon")[1].appendChild(img2);
+        let imageURL = "/images/icons/" + data_e_media_temperature[i].icona + ".svg";
+        forecast_buttons[i].getElementsByClassName("forecast-icon-image")[0].setAttribute('data-src', imageURL);
+        forecast_buttons[i].getElementsByClassName("forecast-icon-image")[1].setAttribute('data-src', imageURL);
     }
 
-    
+    load_images();
 
     if(data_e_media_temperature.length == 4){
         forecast_buttons[i].setAttribute("hidden", true);
@@ -72,16 +59,21 @@ function update_table(giorno){
         newRow.insertCell(3).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].temp_min));
         newRow.insertCell(4).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].temp_max));
         
-        //farle caricare dal worker
         let img = document.createElement('img');
-        img.src= "images/icons/" + giorno_dati_meteo[giorno].dati_meteo[i].icona + ".svg";
         img.width=48;
         img.height=43;
+        let imageURL = "/images/icons/" + giorno_dati_meteo[giorno].dati_meteo[i].icona + ".svg";
+        img.src="data:,";
+        img.classList.add("show_after_load");
+        img.setAttribute("data-src", imageURL);
         newRow.insertCell(5).appendChild(img);
+
         newRow.insertCell(6).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].descrizione_tempo));
         newRow.insertCell(7).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].umidita));
         newRow.insertCell(8).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].velocita_vento));
     }
+
+    load_images();
     
 }
 
@@ -97,9 +89,8 @@ function show_forecast_and_table(){
             }
         });
     }
-    document.getElementById("div-tabella_dati").style.backgroundColor = "#233f6f";
-    document.getElementById("titolo_tabella").classList.remove("no-visibility");
     document.getElementById("forecast-container").classList.remove("no-visibility");
-    document.getElementById("tabella_dati").classList.remove("no-visibility");
+    document.getElementById("titolo_tabella").classList.remove("no-visibility");
+    document.getElementById("div-tabella_dati").classList.remove("no-visibility");
 
 }

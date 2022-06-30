@@ -105,51 +105,52 @@
 
 	<body class="bootstrap">	  
 		<script src="js/white_dark_theme_loader.js"></script>
-		<div style="overflow: hidden;">
-			<nav class="navbar navbar-expand-lg navbar-light" id="mynav">
-				<div class="container">
+	
+		<nav class="navbar navbar-expand-lg navbar-light" id="mynav">
+			<div class="container">
+				
+				<div class="d-flex align-items-center col-6">
+					<img data-src="/images/logo.svg" src="data:," id="logo" height="70" width="70" alt="logo cloudy">
 					
-					<div class="d-flex align-items-center col-6">
-						<img data-src="/images/logo.svg" src="data:," id="logo" height="70" width="70" alt="logo cloudy">
-						
-						<div class="align-self-center d-none d-sm-block" id="logo-name-div"><h3 id="site-title">Cloudy</h3></div>
-						
-						
-						<div class="col-sm-2 col-4" id="dark-light-mode-div">
-							<!--inserire l'element con un javascript worker-->
-							<script src="js/white_dark_theme_changer.js" async></script>
-						</div>
+					<div class="align-self-center d-none d-sm-block" id="logo-name-div"><h3 id="site-title">Cloudy</h3></div>
 					
+					
+					<div class="col-sm-2 col-4" id="dark-light-mode-div">
+						<!--inserire l'element con un javascript worker-->
+						<script src="js/white_dark_theme_changer.js" async></script>
 					</div>
-
-					
-					
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					
-					<div class="collapse navbar-collapse flex-row-reverse nav-bar-div" id="navbarNav">
-						<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Features</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Pricing</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link disabled">Disabled</a>
-						</li>
-						</ul>
-					</div>
-					
+				
 				</div>
-			</nav>
-		</div>
+
+				
+				<!--
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<div class="collapse navbar-collapse flex-row-reverse nav-bar-div" id="navbarNav">
+					<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Features</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Pricing</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled">Disabled</a>
+					</li>
+					</ul>
+				</div>
+				-->
+				
+			</div>
+		</nav>
 		
-		<div class="header-background-image" data-backgrownd-image="/images/new_york_skyline_high.jpg">
+		
+		<div class="header-background-image" data-background-image="/images/new_york_skyline_high.jpg">
 
 			<div class="hero">
 				<div class="container">
@@ -173,11 +174,15 @@
 					<div class="forecast-content">
 						<div class="location">location</div>
 
-						<div class="forecast-icon"></div>
+						<div class="forecast-icon">
+							<img class="forecast-icon-image" width="59" height="47" src="data:,">
+						</div>
 
 						<div class="degree">
-							<div class="num">1°C</div>
-							<div class="forecast-icon"></div>	
+							<div class="num">num</div>
+							<div class="forecast-icon">
+								<img class="forecast-icon-image" width="93" height="64" src="data:,">
+							</div>	
 						</div>
 
 						<p class="info_temp">temperatura media</p>
@@ -192,12 +197,16 @@
 					<div class="forecast-content">
 						<div class="location"></div>
 						
-						<div class="forecast-icon"></div>
+						<div class="forecast-icon">
+							<img class="forecast-icon-image" width="59" height="47" src="data:,">
+						</div>
 						
 						
 						<div class="degree">
 							<div class="num"></div>
-							<div class="forecast-icon"></div>
+							<div class="forecast-icon">
+								<img class="forecast-icon-image" width="93" height="64" src="data:,">
+							</div>
 						</div>
 
 						<p class="info_temp">Temperatura media (tra le ore 8:00 - 20:00)</p>
@@ -210,10 +219,14 @@
 					</div> <!-- .forecast-header -->
 					<div class="forecast-content">
 						<div class="location"></div>
-						<div class="forecast-icon"></div>
+						<div class="forecast-icon">
+							<img class="forecast-icon-image" width="59" height="47" src="data:,">
+						</div>
 						<div class="degree">
 							<div class="num"></div>
-							<div class="forecast-icon"></div>
+							<div class="forecast-icon">
+								<img class="forecast-icon-image" width="93" height="64" src="data:,">
+							</div>
 						</div>
 						<p class="info_temp">Temperatura media (tra le ore 8:00 - 20:00)</p>
 					</div>
@@ -225,10 +238,14 @@
 					</div> <!-- .forecast-header -->
 					<div class="forecast-content">
 						<div class="location"></div>
-						<div class="forecast-icon"></div>
+						<div class="forecast-icon">
+							<img class="forecast-icon-image" width="59" height="47" src="data:,">
+						</div>
 						<div class="degree">
 							<div class="num"></div>
-							<div class="forecast-icon"></div>
+							<div class="forecast-icon">
+								<img class="forecast-icon-image" width="93" height="64" src="data:,">
+							</div>
 						</div>
 						<p class="info_temp">Temperatura media (tra le ore 8:00 - 20:00)</p>
 					</div>
@@ -240,10 +257,14 @@
 					</div> <!-- .forecast-header -->
 					<div class="forecast-content">
 						<div class="location"></div>
-						<div class="forecast-icon"></div>
+						<div class="forecast-icon">
+							<img class="forecast-icon-image" width="59" height="47" src="data:,">
+						</div>
 						<div class="degree">
 							<div class="num"></div>
-							<div class="forecast-icon"></div>
+							<div class="forecast-icon">
+								<img class="forecast-icon-image" width="93" height="64" src="data:,">
+							</div>
 						</div>
 						<p class="info_temp">Temperatura media (tra le ore 8:00 - 20:00)</p>
 					</div>
@@ -255,12 +276,12 @@
 			<div class="container">
 			
 				<div class="row add-col-padding">
-					<h1 class="no-visibility" id="titolo_tabella">Temperature della giornata</h1>
+					<h1 class="no-visibility" id="titolo_tabella">Dati del giorno</h1>
 				</div>
 					
 				<div class="row add-col-padding" id="row-tabella_dati">
-					<div class="table-responsive-lg col-12 no-padding" id="div-tabella_dati">
-						<table class="table no-visibility table-borderless" id="tabella_dati">
+					<div class="table-responsive-lg col-12 no-padding no-visibility" id="div-tabella_dati">
+						<table class="table table-borderless" id="tabella_dati">
 							<thead>
 								<tr>
 									<th class="text-nowrap" >Orario</th>
