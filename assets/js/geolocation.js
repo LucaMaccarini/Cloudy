@@ -1,12 +1,19 @@
 
+//browser bug success case the success fuction is called twice
+let first_geo = true;
 if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    
+    navigator.geolocation.watchPosition(function(position) {
+        if(first_geo){
+            weather_request_worker.postMessage({lat: position.coords.latitude, lon:position.coords.longitude});
+            first_geo=false;
+        }
+    },
+    function(error) {
+        document.getElementById("div-for-geolocation-denied").classList.remove("no-display");
+    });
+
 } else { 
     //alert("Geolocation is not supported by this browser.");
 }
 
-
-function showPosition(position) {
-    //alert( "Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
-    weather_request_worker.postMessage({lat: position.coords.latitude, lon:position.coords.longitude});
-}

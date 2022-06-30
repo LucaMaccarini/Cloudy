@@ -1,3 +1,4 @@
+
 const ImageLoaderWorker = new Worker('js/workers/image_loader.js')
 
 ImageLoaderWorker.addEventListener('message', function(e){
@@ -13,7 +14,6 @@ ImageLoaderWorker.addEventListener('message', function(e){
       imageElement.removeAttribute('data-src')
     })
 
-   
   }else{
     let imageElements = document.querySelectorAll(`img[data-src='${imageData.imageURL}']`)
     imageElements.forEach(imageElement => {
@@ -30,26 +30,37 @@ ImageLoaderWorker.addEventListener('message', function(e){
 
 
 function load_background_images(){
+  let imageURLSet = new Set();
   let backElements = document.querySelectorAll('*[data-background-image]');
   backElements.forEach(imageElement => {
     let imageURL = imageElement.getAttribute('data-background-image')
-
-    ImageLoaderWorker.postMessage({
-          is_background: true,
-          url: imageURL,
-        })
+    if(!imageURLSet.has(imageURL)){
+      ImageLoaderWorker.postMessage({
+        is_background: true,
+        url: imageURL,
+      })
+      imageURLSet.add(imageURL);
+    }
+    
   })
 }
 
 function load_images(){
+  let imageURLSet = new Set();
   let imgElements = document.querySelectorAll('img[data-src]')
   imgElements.forEach(imageElement => {
     let imageURL = imageElement.getAttribute('data-src')
+    
+    if(!imageURLSet.has(imageURL)){
 
-    ImageLoaderWorker.postMessage({
-          is_background: false,
-          url: imageURL,
-        })
+      ImageLoaderWorker.postMessage({
+        is_background: false,
+        url: imageURL,
+      })
+
+      imageURLSet.add(imageURL);
+    }
+
   })
 }
 

@@ -181,7 +181,7 @@
 						<div class="degree">
 							<div class="num">num</div>
 							<div class="forecast-icon">
-								<img class="forecast-icon-image" width="93" height="64" src="data:,">
+								<img class="forecast-icon-image show_after_load" width="93" height="64" src="data:,">
 							</div>	
 						</div>
 
@@ -198,7 +198,7 @@
 						<div class="location"></div>
 						
 						<div class="forecast-icon">
-							<img class="forecast-icon-image" width="59" height="47" src="data:,">
+							<img class="forecast-icon-image show_after_load" width="59" height="47" src="data:,">
 						</div>
 						
 						
@@ -220,7 +220,7 @@
 					<div class="forecast-content">
 						<div class="location"></div>
 						<div class="forecast-icon">
-							<img class="forecast-icon-image" width="59" height="47" src="data:,">
+							<img class="forecast-icon-image show_after_load" width="59" height="47" src="data:,">
 						</div>
 						<div class="degree">
 							<div class="num"></div>
@@ -239,7 +239,7 @@
 					<div class="forecast-content">
 						<div class="location"></div>
 						<div class="forecast-icon">
-							<img class="forecast-icon-image" width="59" height="47" src="data:,">
+							<img class="forecast-icon-image show_after_load" width="59" height="47" src="data:,">
 						</div>
 						<div class="degree">
 							<div class="num"></div>
@@ -258,7 +258,7 @@
 					<div class="forecast-content">
 						<div class="location"></div>
 						<div class="forecast-icon">
-							<img class="forecast-icon-image" width="59" height="47" src="data:,">
+							<img class="forecast-icon-image show_after_load" width="59" height="47" src="data:,">
 						</div>
 						<div class="degree">
 							<div class="num"></div>
@@ -275,6 +275,19 @@
 		<main>
 			<div class="container">
 			
+				
+				<div class="row add-col-padding no-display" id="div-for-geolocation-denied">
+					<div class="col-md-3 col-12 offset-md-1" id="div-icon-geolocation">
+						<img width="93" height="64" src="images/icons/geolocation.svg">	
+					</div>
+					<div class="col-md-6 col-12" id="div-text-geolocation">
+						<h2>Sei pronto ad utilizzare il nostro servizio?</h2>
+						<h2>Prova a cercare una città</h2>
+						<p id="small-geolocation">Non ci hai autorizzato a localizzarti. Devi sapere che concedendo l'autorizzazione alla geolocalizzazione la prossima volta che tornerai sul nostro servizio riceverai automaticamente il meteo della tua posizione</p>
+					</div>
+					
+				</div>
+
 				<div class="row add-col-padding">
 					<h1 class="no-visibility" id="titolo_tabella">Dati del giorno</h1>
 				</div>

@@ -86,7 +86,7 @@ body.bootstrap{
 }
 
 
-h1, h2, h3, h4, h5, h6, p{
+h1, h2, h3, h4, h5, h6, p, small{
     color: #233f6f;
 }
 
@@ -209,6 +209,10 @@ ul.no-bullets {
     visibility: hidden;
 }
 
+.no-display{
+    display: none !important;
+}
+
 .no-padding{
     padding: 0px !important;
 }
@@ -286,14 +290,23 @@ main{
     visibility: hidden;
 }
 
-main{
-    height: 670px;
+#div-icon-geolocation{
+    text-align: center;
+}
+
+
+#small-geolocation{
+    font-size: 11px;
+}
+
+#titolo_tabella{
+    margin-bottom: 11px;
 }
 
 
 
 
-/*lg*/
+
 @media screen and (max-width: 992px) {
     .header-background-image{
         height: 442px;
@@ -348,5 +361,19 @@ main{
     }
 
 
+}
+
+@media screen and (max-width: 768px) {
+    #div-icon-geolocation{
+        margin-bottom: 30px;
+    }
+
+    #div-text-geolocation{
+        text-align: center;
+    }
+
+    #div-text-geolocation>h2{
+        margin-bottom: 45px;
+    }
 }
 

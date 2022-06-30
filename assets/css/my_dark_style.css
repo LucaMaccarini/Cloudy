@@ -1,4 +1,8 @@
-body[class*="bootstrap-dark"] h1, body[class*="bootstrap-dark"] h2, body[class*="bootstrap-dark"] h3, [class*="bootstrap-dark"] h4, body[class*="bootstrap-dark"] h5, body[class*="bootstrap-dark"] h6, body[class*="bootstrap-dark"] p, body[class*="bootstrap-dark"] a {
+body[class*="bootstrap-dark"]{
+    background-color: black;
+}
+
+body[class*="bootstrap-dark"] h1, body[class*="bootstrap-dark"] h2, body[class*="bootstrap-dark"] h3, [class*="bootstrap-dark"] h4, body[class*="bootstrap-dark"] h5, body[class*="bootstrap-dark"] h6, body[class*="bootstrap-dark"] p, body[class*="bootstrap-dark"] a, body[class*="bootstrap-dark"] small {
     color: white !important;
 }
 

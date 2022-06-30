@@ -15,6 +15,7 @@ api_data_parser.onmessage = function(e){
     //document.getElementById("out").textContent=JSON.stringify(parsed_data);
     update_forecast_buttons_data();
     update_table(0);
+
     if(first){
         show_forecast_and_table();
         first=false;
@@ -42,7 +43,7 @@ function update_forecast_buttons_data(){
     load_images();
 
     if(data_e_media_temperature.length == 4){
-        forecast_buttons[i].setAttribute("hidden", true);
+        forecast_buttons[4].setAttribute("hidden", true);
     }
 }
 
@@ -72,9 +73,7 @@ function update_table(giorno){
         newRow.insertCell(7).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].umidita));
         newRow.insertCell(8).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].velocita_vento));
     }
-
-    load_images();
-    
+    load_images();    
 }
 
 var selected_forecast=0;
