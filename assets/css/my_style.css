@@ -200,7 +200,6 @@ ul.no-bullets {
 
 #tabella_dati{
     color:white;
-    margin-bottom: 10px;
     margin-top: 4px;
 }
 
@@ -303,8 +302,19 @@ main{
     margin-bottom: 11px;
 }
 
+.site-footer p {
+    color: white;
+    margin: 0px !important;
+}
 
+.site-footer{
+    background: #262936;
+    padding: 30px 0;
+}
 
+#row-tabella_dati{
+    margin-bottom: 36px;
+}
 
 
 @media screen and (max-width: 992px) {
