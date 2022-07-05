@@ -103,6 +103,7 @@ function update_table(giorno){
         img.setAttribute("data-src", imageURL);
         img.setAttribute("alt", giorno_dati_meteo[giorno].dati_meteo[i].descrizione_tempo);
         newRow.insertCell(5).appendChild(img);
+        newRow.cells[5].classList.add("hide-text");
 
         newRow.insertCell(6).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].descrizione_tempo));
         newRow.insertCell(7).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].umidita));

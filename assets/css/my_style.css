@@ -198,7 +198,7 @@ ul.no-bullets {
 
 #tabella_dati{
     color:white;
-    margin-top: 4px;
+    margin-top: 1rem;
 }
 
 
@@ -216,6 +216,7 @@ ul.no-bullets {
 
 main{
     margin-top: 54px;
+    height: 672px;
 }
 
 #div-tabella_dati{
@@ -314,7 +315,7 @@ main{
     margin-bottom: 36px;
 }
 
-.site-footer h4{
+.site-footer h5{
     color: white;
     margin-bottom: 21px;
     margin-top: 14px;
@@ -333,8 +334,15 @@ main{
     color: white;
 }
 
+.hide-text {
+    font-size: 0px !important;
+}
+
 
 @media screen and (max-width: 992px) {
+    main{
+        height: 774px;
+    }
     .header-background-image{
         height: 442px;
     }
