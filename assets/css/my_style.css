@@ -1,5 +1,4 @@
 .header-background-image{
-    background-image: linear-gradient(rgba(36,36,36,.1), rgba(36,36,36,.1));
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
@@ -78,7 +77,6 @@ body.bootstrap{
 }
 
 #site-title{
-    /* trovare un font secondario più carino */
     font-family: 'Satisfy', cursive;
     font-weight: bold;
     font-size: 36px;
@@ -125,7 +123,7 @@ ul.no-bullets {
 
 
 #dark-light-mode-div{
-    padding-left: 15px;
+    text-align: right;
     margin-left: 0px;
 }
 
@@ -314,6 +312,25 @@ main{
 
 #row-tabella_dati{
     margin-bottom: 36px;
+}
+
+.site-footer h4{
+    color: white;
+    margin-bottom: 21px;
+    margin-top: 14px;
+}
+
+#email-input{
+    background-color: #565c72;
+}
+
+#email-input::placeholder{
+    color: white;
+}
+
+#iscriviti-button{
+    background-color: #262936;
+    color: white;
 }
 
 

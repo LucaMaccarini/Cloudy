@@ -43,7 +43,6 @@ self.addEventListener('message', async function(e){
             }else{
                 somma+=e.data.list[i].main.temp;
                 elementi++;
-                //console.log(e.data.list[i].main.temp);
                 
                 if (icon_freq.has(icon)) {
                     icon_freq.set(icon, icon_freq.get(icon) + 1)
@@ -56,10 +55,10 @@ self.addEventListener('message', async function(e){
             ora_dati_meteo.push(
                 {
                     ora: current_data.ora, 
-                    temp: e.data.list[i].main.temp, 
-                    temp_percepita: e.data.list[i].main.feels_like, 
-                    temp_min: e.data.list[i].main.temp_min,
-                    temp_max: e.data.list[i].main.temp_max,            
+                    temp: Math.round(e.data.list[i].main.temp), 
+                    temp_percepita: Math.round(e.data.list[i].main.feels_like), 
+                    temp_min: Math.round(e.data.list[i].main.temp_min),
+                    temp_max: Math.round(e.data.list[i].main.temp_max),            
                     umidita: e.data.list[i].main.humidity,
                     descrizione_tempo: e.data.list[i].weather[0].description,
                     icona: e.data.list[i].weather[0].icon,
@@ -113,10 +112,10 @@ self.addEventListener('message', async function(e){
             ora_dati_meteo.push(
                 {
                     ora: current_data.ora, 
-                    temp: e.data.list[i].main.temp, 
-                    temp_percepita: e.data.list[i].main.feels_like, 
-                    temp_min: e.data.list[i].main.temp_min,
-                    temp_max: e.data.list[i].main.temp_max,            
+                    temp: Math.round(e.data.list[i].main.temp), 
+                    temp_percepita: Math.round(e.data.list[i].main.feels_like), 
+                    temp_min: Math.round(e.data.list[i].main.temp_min),
+                    temp_max: Math.round(e.data.list[i].main.temp_max),            
                     umidita: e.data.list[i].main.humidity,
                     descrizione_tempo: e.data.list[i].weather[0].description,
                     icona: e.data.list[i].weather[0].icon,

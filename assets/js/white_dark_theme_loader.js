@@ -12,17 +12,17 @@ else{
 
 var styles = `
     ::-webkit-input-placeholder { 
-        transition-duration: 645ms ;
+        transition-duration: 640ms ;
     }
     ::-moz-placeholder { 
-        transition-duration: 645ms ;
+        transition-duration: 640ms ;
     }
     :-ms-input-placeholder { 
-        transition-duration: 645ms ;
+        transition-duration: 640ms ;
     }
 
     *{
-        transition-duration: 645ms ;
+        transition-duration: 640ms ;
         transition-property: background-color, color;
     }
 `
@@ -30,4 +30,3 @@ var styles = `
 var styleSheet = document.createElement("style")
 styleSheet.innerText = styles
 document.head.appendChild(styleSheet)
-//add css rule

@@ -12,23 +12,41 @@ function parse_api_data(data){
 var first=true;
 api_data_parser.onmessage = function(e){
     parsed_data=e.data;
-    //document.getElementById("out").textContent=JSON.stringify(parsed_data);
     update_forecast_buttons_data();
     update_table(0);
+    update_footer();
 
     if(first){
-        show_forecast_and_table();
+        show_forecast_table_and_footer();
         first=false;
     }
 }
 
+function update_footer(){
+    document.getElementById("footer_city").textContent = parsed_data.citta;
+    update_newsletter_subscription_city();
+
+    document.getElementById("iscriviti-button").addEventListener("click", function() {
+        let email = document.getElementById("email-input").value
+        if(validateEmail(email)){
+            document.getElementById("newsletter-form").submit();
+        }else{
+            alert("la email inserita non corrisponde ad una email realmente esistente");
+        }
+    });
+    
+}
+
+function update_newsletter_subscription_city(){
+    document.getElementById("footer_city-input").value = parsed_data.citta;
+}
+
+var selected_forecast=0;
 
 function update_forecast_buttons_data(){
-    //dopo le 23 bisogna nascondere l'ultimo giorno
     let data_e_media_temperature=parsed_data.giorno_media;
    
     forecast_buttons[0].getElementsByClassName("info_temp")[0].textContent="Temperatura media (tra le ore: " + data_e_media_temperature[0].data.ora +":00 - 23:00)";
-    //document.getElementById("out").textContent=JSON.stringify(data_e_media_temperature);
     for(let i=0; i<data_e_media_temperature.length; i++){
         forecast_buttons[i].getElementsByClassName("day")[0].textContent=data_e_media_temperature[i].data.nome_giorno;
         forecast_buttons[i].getElementsByClassName("date")[0].textContent = data_e_media_temperature[i].data.giorno + " " + data_e_media_temperature[i].data.mese;
@@ -38,13 +56,24 @@ function update_forecast_buttons_data(){
         let imageURL = "/images/icons/" + data_e_media_temperature[i].icona + ".svg";
         forecast_buttons[i].getElementsByClassName("forecast-icon-image")[0].setAttribute('data-src', imageURL);
         forecast_buttons[i].getElementsByClassName("forecast-icon-image")[1].setAttribute('data-src', imageURL);
+
+        
+
     }
 
     load_images();
 
+    if(selected_forecast != 0){
+        forecast_buttons[selected_forecast].classList.remove("today");
+        forecast_buttons[0].classList.add("today");
+        selected_forecast=0;
+    }
+
     if(data_e_media_temperature.length == 4){
         forecast_buttons[4].setAttribute("hidden", true);
     }
+
+    update_newsletter_subscription_city()
 }
 
 
@@ -67,6 +96,7 @@ function update_table(giorno){
         img.src="data:,";
         img.classList.add("show_after_load");
         img.setAttribute("data-src", imageURL);
+        img.setAttribute("alt", giorno_dati_meteo[giorno].dati_meteo[i].descrizione_tempo);
         newRow.insertCell(5).appendChild(img);
 
         newRow.insertCell(6).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].descrizione_tempo));
@@ -76,8 +106,7 @@ function update_table(giorno){
     load_images();    
 }
 
-var selected_forecast=0;
-function show_forecast_and_table(){
+function show_forecast_table_and_footer(){
     for(let i=0; i<forecast_buttons.length; i++){
         forecast_buttons[i].addEventListener("click", function() {
             if(i != selected_forecast){
@@ -91,5 +120,9 @@ function show_forecast_and_table(){
     document.getElementById("forecast-container").classList.remove("no-visibility");
     document.getElementById("titolo_tabella").classList.remove("no-visibility");
     document.getElementById("div-tabella_dati").classList.remove("no-visibility");
+
+    document.getElementById("div-newsletter").classList.remove("no-display");
+    document.getElementById("div-copyright").style.marginTop="42px";
+
 
 }

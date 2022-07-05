@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>Cloudy newsletter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link href="fonts/Satisfy.css" rel="stylesheet">
+
+        <style>
+            #h1-logo{
+                font-family: 'Satisfy', cursive;
+                margin-bottom: 0px;
+            }
+            *{
+                font-family: Arial;
+            }
+        </style>
+    </head>
+
+    <body style="margin: 0; padding: 0;" >
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+            <tr>
+                <td>
+                    <h1 id="h1-logo" align="center">Cloudy</h1>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffff" style="padding: 7px 30px 40px 30px;">
+                    <h2 style="text-align: center;">Il meteo di oggi a <%= citta %></h2>
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th style="padding: 5px;">Orario</th>
+                                <th style="padding: 5px;">temp. °c</th>
+                                <th style="padding: 5px;">descrizione</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td align="center">Mattina</td>
+                                <td align="center">
+                                    <%= temp_mattina %>
+                                </td>
+                                <td align="center">
+                                    <%= desc_mattina %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">Pomeriggio</td>
+                                <td align="center">
+                                    <%= temp_pome %>
+                                </td>
+                                <td align="center">
+                                    <%= desc_pome %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">Sera</td>
+                                <td align="center">
+                                    <%= temp_sera %>
+                                </td>
+                                <td align="center">
+                                    <%= desc_sera %>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#262936" style="padding: 10px 15px 10px 15px; color: white;">
+                    Cloudy ti augura una buona giornata!
+                </td>
+            </tr>
+        </table>
+    </body>
+       
+</html>

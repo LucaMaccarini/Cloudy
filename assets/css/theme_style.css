@@ -369,6 +369,23 @@ div textarea {
   bottom: 5px;
   padding: 0 40px;
 }
+
+.news-letter {
+  position: relative;
+}
+.news-letter input[type="text"] {
+  width: 100%;
+  padding: 20px 50px 20px 20px;
+  color: white;
+}
+.news-letter input[type="button"] {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  padding: 0 40px;
+}
+
 .forecast-container {
   width: 100%;
   background: #233f6f80;
