@@ -44,6 +44,11 @@ function update_newsletter_subscription_city(){
 var selected_forecast=0;
 
 function update_forecast_buttons_data(){
+    let div_geolocation = document.getElementById("div-for-geolocation-denied");
+    if(!div_geolocation.classList.contains("no-display")){
+        div_geolocation.classList.add("no-display")
+    }
+    
     let data_e_media_temperature=parsed_data.giorno_media;
    
     forecast_buttons[0].getElementsByClassName("info_temp")[0].textContent="Temperatura media (tra le ore: " + data_e_media_temperature[0].data.ora +":00 - 23:00)";
