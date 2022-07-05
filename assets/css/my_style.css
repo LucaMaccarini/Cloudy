@@ -216,7 +216,7 @@ ul.no-bullets {
 
 main{
     margin-top: 54px;
-    height: 672px;
+    /*height: 672px;*/
 }
 
 #div-tabella_dati{
@@ -340,9 +340,11 @@ main{
 
 
 @media screen and (max-width: 992px) {
+    /*
     main{
         height: 774px;
     }
+    */
     .header-background-image{
         height: 442px;
     }
