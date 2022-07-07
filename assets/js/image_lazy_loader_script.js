@@ -27,24 +27,6 @@ ImageLoaderWorker.addEventListener('message', function(e){
   }
 })
 
-
-
-function load_background_images(){
-  let imageURLSet = new Set();
-  let backElements = document.querySelectorAll('*[data-background-image]');
-  backElements.forEach(imageElement => {
-    let imageURL = imageElement.getAttribute('data-background-image')
-    if(!imageURLSet.has(imageURL)){
-      ImageLoaderWorker.postMessage({
-        is_background: true,
-        url: imageURL,
-      })
-      imageURLSet.add(imageURL);
-    }
-    
-  })
-}
-
 function load_images(){
   let imageURLSet = new Set();
   let imgElements = document.querySelectorAll('img[data-src]')
@@ -63,6 +45,23 @@ function load_images(){
 
   })
 }
+
+function load_background_images(){
+  let imageURLSet = new Set();
+  let backElements = document.querySelectorAll('*[data-background-image]');
+  backElements.forEach(imageElement => {
+    let imageURL = imageElement.getAttribute('data-background-image')
+    if(!imageURLSet.has(imageURL)){
+      ImageLoaderWorker.postMessage({
+        is_background: true,
+        url: imageURL,
+      })
+      imageURLSet.add(imageURL);
+    }
+    
+  })
+}
+
 
 load_background_images();
 load_images();

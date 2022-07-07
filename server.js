@@ -51,7 +51,7 @@ app.get('/index', function (req, res) {
 
 app.post('/city_name_weather', urlencodedParser, function(req, res) {
     let city = req.body.city;
-    axios.get('http://api.openweathermap.org/geo/1.0/direct?q='+ city +'&limit=1&appid=' + apikey)
+    axios.get('https://api.openweathermap.org/geo/1.0/direct?q='+ city +'&limit=1&appid=' + apikey)
     .then(axios_res => {
         let lat = axios_res.data[0].lat;
         let lon = axios_res.data[0].lon;
@@ -144,7 +144,7 @@ var mailOptions = {
 
 
 //scheduled job for send newsletters
-const job = schedule.scheduleJob('* * 6 * *', function(){
+const job = schedule.scheduleJob('0 0 6 * * *', function(){
 //const job = schedule.scheduleJob('*/5 * * * * *', function(){
     
     console.log("news_letter job started");

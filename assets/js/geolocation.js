@@ -14,5 +14,6 @@ if (navigator.geolocation) {
     });
 
 } else { 
+    
 }
 

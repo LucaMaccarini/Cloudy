@@ -466,9 +466,11 @@ div textarea {
   text-align: center;
   font-weight: 400;
 }
+/*
 .forecast-container .forecast .forecast-icon {
   height: 50px;
 }
+*/
 .forecast-container .forecast .forecast-content {
   padding: 50px 20px 0px;
   text-align: center;
