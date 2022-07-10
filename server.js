@@ -136,7 +136,7 @@ app.post('/subscribe_to_newsletter', urlencodedParser, function(req, res) {
 
 
 var mailOptions = {
-    from: 'cloudy.progetto@zohomail.eu',
+    from: 'iodbsdfhsrhn@zohomail.eu',
     to: "",
     subject: 'Cloudy: il meteo di oggi',
     html: ''
