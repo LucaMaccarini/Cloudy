@@ -11,7 +11,7 @@
  *    lon:....
  * }
  */
-self.onmessage= function(e){
+self.onmessage = function(e){
   let xhr = new XMLHttpRequest();
   xhr.responseType = 'json';
 

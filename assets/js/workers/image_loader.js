@@ -1,5 +1,5 @@
 
-self.addEventListener('message', async function(e){
+self.onmessage = async function(e){
     let imageURL = e.data.url
   
     let response = await fetch(imageURL)
@@ -10,4 +10,4 @@ self.addEventListener('message', async function(e){
       imageURL: imageURL,
       blob: blob,
     })
-  })
+}

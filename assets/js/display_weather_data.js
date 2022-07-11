@@ -81,35 +81,66 @@ function update_forecast_buttons_data(){
     update_newsletter_subscription_city()
 }
 
+var last_row_current_day;
 
-function update_table(giorno){
+function update_table(){
     let giorno_dati_meteo = parsed_data.giorno_dati_meteo;
     corpo_tabella_dati.innerHTML="";
     
-    for(let i=0; i<giorno_dati_meteo[giorno].dati_meteo.length; i++){
-        let newRow = corpo_tabella_dati.insertRow(-1);
-        newRow.insertCell(0).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].ora + ":00"));
-        newRow.insertCell(1).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].temp));
-        newRow.insertCell(2).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].temp_percepita));
-        newRow.insertCell(3).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].temp_min));
-        newRow.insertCell(4).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].temp_max));
-        
-        let img = document.createElement('img');
-        img.width=48;
-        img.height=43;
-        let imageURL = "/images/icons/" + giorno_dati_meteo[giorno].dati_meteo[i].icona + ".svg";
-        img.src="data:,";
-        img.classList.add("show_after_load");
-        img.setAttribute("data-src", imageURL);
-        img.setAttribute("alt", giorno_dati_meteo[giorno].dati_meteo[i].descrizione_tempo);
-        newRow.insertCell(5).appendChild(img);
-        newRow.cells[5].classList.add("hide-text");
+    for(let j=0; j<giorno_dati_meteo.length; j++){
+        for(let i=0; i<giorno_dati_meteo[j].dati_meteo.length; i++){
+            let newRow = corpo_tabella_dati.insertRow(-1);
+            newRow.insertCell(0).appendChild(document.createTextNode(giorno_dati_meteo[j].dati_meteo[i].ora + ":00"));
+            newRow.insertCell(1).appendChild(document.createTextNode(giorno_dati_meteo[j].dati_meteo[i].temp));
+            newRow.insertCell(2).appendChild(document.createTextNode(giorno_dati_meteo[j].dati_meteo[i].temp_percepita));
+            newRow.insertCell(3).appendChild(document.createTextNode(giorno_dati_meteo[j].dati_meteo[i].temp_min));
+            newRow.insertCell(4).appendChild(document.createTextNode(giorno_dati_meteo[j].dati_meteo[i].temp_max));
+            
+            let img = document.createElement('img');
+            img.width=48;
+            img.height=43;
+            let imageURL = "/images/icons/" + giorno_dati_meteo[j].dati_meteo[i].icona + ".svg";
+            img.src="data:,";
+            //img.classList.add("show_after_load");
+            img.setAttribute("data-src", imageURL);
+            img.setAttribute("alt", giorno_dati_meteo[j].dati_meteo[i].descrizione_tempo);
+            newRow.insertCell(5).appendChild(img);
+            newRow.cells[5].classList.add("hide-text");
 
-        newRow.insertCell(6).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].descrizione_tempo));
-        newRow.insertCell(7).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].umidita));
-        newRow.insertCell(8).appendChild(document.createTextNode(giorno_dati_meteo[giorno].dati_meteo[i].velocita_vento));
+            newRow.insertCell(6).appendChild(document.createTextNode(giorno_dati_meteo[j].dati_meteo[i].descrizione_tempo));
+            newRow.insertCell(7).appendChild(document.createTextNode(giorno_dati_meteo[j].dati_meteo[i].umidita));
+            newRow.insertCell(8).appendChild(document.createTextNode(giorno_dati_meteo[j].dati_meteo[i].velocita_vento));
+
+            if( j== 0 && i+1 >= giorno_dati_meteo[j].dati_meteo.length){
+                last_row_current_day = i;
+            }
+        }
+
     }
-    load_images();    
+    load_images();
+    show_table_day(0);
+}
+
+const righe_di_un_giorno = 8;
+
+function show_table_day(day){
+    let righe = corpo_tabella_dati.rows;
+    //alert(JSON.stringify(corpo_tabella_dati.rows[0].cells[0]));
+    for(let i = 0; i< righe.length; i++){
+        if(!righe[i].classList.contains("no-display"))
+        righe[i].classList.add("no-display")
+    }
+
+    if(day == 0){
+        for(let i = 0; i<= last_row_current_day; i++){
+            righe[i].classList.remove("no-display")
+        }
+    }else{
+        let offset = last_row_current_day + 1 + (day-1) * righe_di_un_giorno;
+        for(let i = offset; i< offset + righe_di_un_giorno; i++){
+            righe[i].classList.remove("no-display")
+        }
+    }
 }
 
 function show_forecast_table_and_footer(){
@@ -119,7 +150,7 @@ function show_forecast_table_and_footer(){
                 forecast_buttons[selected_forecast].classList.remove("today");
                 forecast_buttons[i].classList.add("today");
                 selected_forecast=i;
-                update_table(i);
+                show_table_day(i);
             }
         });
     }

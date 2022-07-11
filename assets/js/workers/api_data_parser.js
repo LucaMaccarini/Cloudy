@@ -13,7 +13,7 @@ const forecast_days = 5;
 const ora_inizio_calcolo=8;
 const ora_fine_calcolo = 20;
 
-self.addEventListener('message', async function(e){
+self.onmessage = function(e){
     var giorno_media = new Array();
     var giorno_dati_meteo = new Array();
     var ora_dati_meteo = new Array();
@@ -128,4 +128,4 @@ self.addEventListener('message', async function(e){
     }
     self.postMessage({citta: e.data.city.name,giorno_media:giorno_media, giorno_dati_meteo: giorno_dati_meteo});
     
-})
+}
