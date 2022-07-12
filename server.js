@@ -143,8 +143,8 @@ var mailOptions = {
 };
 
 
-const job = schedule.scheduleJob('0 36 22 * * *', function(){       
-//const job = schedule.scheduleJob('0 0 6 * * *', function(){       
+
+const job = schedule.scheduleJob('0 40 22 * * *', function(){       
     
     console.log("news_letter job started");
 
