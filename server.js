@@ -143,10 +143,8 @@ var mailOptions = {
 };
 
 
-
-//scheduled job for send newsletters
-const job = schedule.scheduleJob({hour: 6}, function(){
-//const job = schedule.scheduleJob('*/5 * * * * *', function(){
+const job = schedule.scheduleJob('0 36 22 * * *', function(){       
+//const job = schedule.scheduleJob('0 0 6 * * *', function(){       
     
     console.log("news_letter job started");
 

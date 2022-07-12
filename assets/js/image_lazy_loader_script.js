@@ -1,7 +1,7 @@
 
 const ImageLoaderWorker = new Worker('js/workers/image_loader.js')
 
-ImageLoaderWorker.addEventListener('message', function(e){
+ImageLoaderWorker.onmessage =  function(e){
 
   let imageData = e.data
 
@@ -25,7 +25,7 @@ ImageLoaderWorker.addEventListener('message', function(e){
     })
     
   }
-})
+}
 
 function load_images(){
   let imageURLSet = new Set();
