@@ -1,0 +1,14 @@
+
+var mailOptions = {
+   from: 'iodbsdfhsrhn@zohomail.eu',
+   to: "",
+   subject: 'Cloudy: il meteo di oggi',
+   html: ''
+};
+
+
+exports.sendMail = function(){
+
+    
+ 
+ }

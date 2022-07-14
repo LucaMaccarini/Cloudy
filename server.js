@@ -6,8 +6,9 @@ const axios = require('axios');
 const json = require('body-parser/lib/types/json');
 const MongoClient = require("mongodb").MongoClient;
 const schedule = require('node-schedule');
-const send_email = require('./js_for_server/send_mail');
+const send_email = require('./newsletter_email_sender/send_mail');
 const ejs = require("ejs");
+const email_validator = require('./example');
 
 // Configure dotenv package
 require("dotenv").config();
@@ -30,14 +31,6 @@ app.set('view engine', 'ejs');
 
 
 const apikey = "3b39382c30c048cc84c327275897c841";
-
-const validateEmail = (email) => {
-    return String(email)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-};
 
 
 app.get('/', function (req, res) {
@@ -95,7 +88,7 @@ app.post('/subscribe_to_newsletter', urlencodedParser, function(req, res) {
     let email = req.body.email;
     let city = req.body.city;
 
-    if(!validateEmail(email)){
+    if(!email_validator.validate(email)){
         res.render("subscribed_newsletter", {img_src: "not_ok", titolo:"Non è stato possibile registrarti", messaggio:"La email inserita non è una vera email"})
         return;
     }

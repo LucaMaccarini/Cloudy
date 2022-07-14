@@ -28,7 +28,7 @@ function update_footer(){
 
     document.getElementById("iscriviti-button").addEventListener("click", function() {
         let email = document.getElementById("email-input").value
-        if(validateEmail(email)){
+        if(validateEmail.validate(email)){
             document.getElementById("newsletter-form").submit();
         }else{
             alert("la email inserita non corrisponde ad una email realmente esistente");
