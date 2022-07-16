@@ -8,7 +8,7 @@ const MongoClient = require("mongodb").MongoClient;
 const schedule = require('node-schedule');
 const send_email = require('./newsletter_email_sender/send_mail');
 const ejs = require("ejs");
-const email_validator = require('./example');
+const email_validator = require('./assets/js/email_validator').validateEmail;
 
 // Configure dotenv package
 require("dotenv").config();
