@@ -1,4 +1,4 @@
-
+/*
 //browser bug success case the success fuction is called twice
 let first_geo = true;
 if (navigator.geolocation) {
@@ -16,4 +16,19 @@ if (navigator.geolocation) {
 } else { 
     
 }
+
+*/
+
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        weather_request_worker.postMessage({lat: position.coords.latitude, lon:position.coords.longitude});
+    },
+    function(error) {
+        document.getElementById("div-for-geolocation-denied").classList.remove("no-display");
+    });
+} else {
+    //Geolocation is not supported by this browser
+}
+
 
