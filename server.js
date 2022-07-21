@@ -30,7 +30,7 @@ app.use(express.static(__dirname + '/assets'));
 app.set('view engine', 'ejs');
 
 
-const apikey = "3b39382c30c048cc84c327275897c841";
+const apikey = process.env.apikey;
 
 
 app.get('/', function (req, res) {
@@ -137,7 +137,8 @@ var mailOptions = {
 
 
 
-const job = schedule.scheduleJob('0 0 13 * * *', function(){       
+const job = schedule.scheduleJob('0 0 6 * * *', function(){       
+//const job = schedule.scheduleJob('*/8 * * * * *', function(){       
     
     console.log("news_letter job started");
 

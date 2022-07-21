@@ -16,7 +16,6 @@ if (navigator.geolocation) {
 } else { 
     
 }
-
 */
 
 
