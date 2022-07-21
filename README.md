@@ -5,4 +5,6 @@ progetto realizzato per un esame universitario.
 
 tutte le credenziali o le api key inserite si interfacciano su account "inutili" o api gratuite quindi le ho lasciate
 
+per vedere il funzionamento andare al link https://cloudymaccarini.herokuapp.com/
+
 # Per le info sul progetto guardare "Relazione progetto Luca Maccarini.pdf"
