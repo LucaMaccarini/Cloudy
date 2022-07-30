@@ -1,5 +1,6 @@
-<img src="https://github.com/LucaMaccarini/Cloudy/blob/main/assets/images/logo.svg" width="200">
 # Cloudy
+
+<img src="https://github.com/LucaMaccarini/Cloudy/blob/main/assets/images/logo.svg" width="200">
 
 sito meteorologico responsive e performante!
 
