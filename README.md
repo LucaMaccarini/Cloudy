@@ -1,4 +1,5 @@
 # Cloudy
+![class](https://github.com/MaccariniLuca/Cloudy/assets/images/logo.svg)
 sito meteorologico responsive e performante!
 
 progetto realizzato per un esame universitario.
