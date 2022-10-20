@@ -2,14 +2,14 @@
 
 <img src="https://github.com/LucaMaccarini/Cloudy/blob/main/assets/images/logo.svg" width="200">
 
-sito meteorologico responsive e performante!
+Responsive and high-performance weather site!
 
-progetto realizzato per un esame universitario.
+project made for a university exam.
 
-è presente una relazione del progetto al link https://bit.ly/3RLVrsa
+I created a little report containing all the info and design choices of the web app (only italian language) https://bit.ly/3RLVrsa
 
-tutte le credenziali o le api key inserite si interfacciano su account "inutili" o api gratuite quindi le ho lasciate
+all the credentials or api key used are "useless" accounts or free api so I left them in the source code
 
-per vedere il funzionamento andare al link https://cloudymaccarini.herokuapp.com/
+to see how this web app looks like, it is hosted at this link https://cloudymaccarini.herokuapp.com/
 
-## Per le info sul progetto guardare La relazione linkata
+## For info on the project see The linked report
