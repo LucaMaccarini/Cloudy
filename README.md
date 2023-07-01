@@ -10,6 +10,6 @@ I created a little report containing all the info and design choices of the web 
 
 all the credentials or api key used are "useless" accounts or free api so I left them in the source code
 
-to see how this web app looks like, it is hosted at this link https://cloudymaccarini.herokuapp.com/
+to see how this web app looks like, it is hosted at this link https://cloudy-7o5q.onrender.com
 
 ## For info on the project see The linked report
