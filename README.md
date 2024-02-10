@@ -11,6 +11,6 @@ I created a little report containing all the info and design choices of the web 
 all the credentials or api key used are "useless" accounts or free api so I left them in the source code
 
 to see how this web app looks like, it is running here: https://cloudy-7o5q.onrender.com
-The onreder server is free and on the first requests it boots up, so the first request takes a while
+the onreder server is free and on the first requests it boots up, so the first request takes a while
 
 ## For info on the project see The linked report
