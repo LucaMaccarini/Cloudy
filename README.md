@@ -2,7 +2,7 @@
 
 <img src="https://github.com/LucaMaccarini/Cloudy/blob/main/assets/images/logo.svg" width="200">
 
-Responsive and high-performance weather site!
+Weather site!
 
 project made for a university exam.
 
