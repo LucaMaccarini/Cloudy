@@ -4,9 +4,7 @@
 
 Weather site!
 
-project made for a university exam.
-
-I created a little report containing all the info and design choices of the web app (only italian language) https://bit.ly/3RLVrsa
+I created a little report containing all the info and design choices of the web app (only italian language) here: https://bit.ly/3RLVrsa
 
 all the credentials or api key used are "useless" accounts or free api so I left them in the source code
 
